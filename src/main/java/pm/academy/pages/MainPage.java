@@ -16,6 +16,8 @@ public class MainPage extends BasePage {
     @AndroidFindBy(id = "com.parimatch:id/ivLogo")
     private MobileElement headTitle;
 
+    @AndroidFindBy(xpath = "//android.view.View[contains(@content-desc, 'sport-tab')]")
+    private MobileElement sportButton;
 
     public boolean isMenuButtonDisplayed() {
         return waitForExpectedElement(menuButton).isDisplayed();
@@ -31,5 +33,9 @@ public class MainPage extends BasePage {
 
     public void clickMenuButtonDisplayed() {
         waitForExpectedElement(menuButton).click();
+    }
+
+    public void clickSportPage() {
+        waitForExpectedElement(sportButton).click();
     }
 }
